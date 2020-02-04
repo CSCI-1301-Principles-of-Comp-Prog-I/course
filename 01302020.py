@@ -46,6 +46,24 @@ elif b >= c >= a:
 else:
     print("largest: "+str(b))
     print("smallest: "+str(c))
+
+print("-------------------------------------------------------------")
+
+highest  = a
+smallest = a
+if highest < b:
+    highest = b
+else:
+    smallest = b
+    
+if highest < c:
+    highest = c
+elif c < smallest:
+    smallest = c
+
+print ("largest: "+str(highest))
+print ("smallest: "+str(smallest))
+
 print("-------------------------------------------------------------")
 
 # Problem 3: Give values for a, b, and c making the following:
