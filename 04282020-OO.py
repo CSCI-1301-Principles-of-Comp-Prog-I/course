@@ -25,10 +25,37 @@ class TikTacToe:
         self.current_player = "X"
         
 
+    # Getters return each attribute set in __init__:
+    def getBlankSym(self):
+        return self.blank_sym
+
+    def getPlayerSyms(self):
+        return self.player_syms
+
+    def getBoard(self):
+        return self.board
+
+    def getCurrentPlayer(self):
+        return self.current_player
+
+    # Setters set each attribute:
+    def setBlankSym(self, new_blank_sym):
+        self.blank_sym = new_blank_sym
+
+    def setPlayerSyms(self, new_player_syms):
+        self.player_syms = new_player_syms
+
+    def setBoard(self, new_board):
+        self.board = new_board
+
+    def setCurrentPlayer(self, new_current_player):
+        self.current_player = new_current_player
+
     # Returns True if self.board is solved, and false otherwise.
     def isSolved(self):
         _solved = [self.blank_sym for row in self.board for (r,c,s) in row if s == self.blank_sym]
-        return _solved == []
+
+        return _solved == []    
 
     # Returns True if current_player is the winner, and false otherwise.
     def checkWinner(self):
@@ -115,12 +142,12 @@ def play():
     print(game.board2String())
     win = game.checkWinner()
     if win:
-        print (game.current_player+" won!")
+        print (game.getCurrentPlayer()+" won!")
     else:
         game.updatePlayer()
         win = game.checkWinner()
         if win:
-            print (game.current_player+" won!")
+            print (game.getCurrentPlayer()+" won!")
         else:
             print("Error occured")
 
